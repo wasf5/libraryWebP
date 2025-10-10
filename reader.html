@@ -1,0 +1,105 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Online library</title>
+  <style>
+body {font-family: "Tajawal", sans-serif;background-color: #E8F5E9;color: #333;margin: 0;padding: 0;text-align: center;transition: background-color 0.4s, color 0.4s;}
+header {background-color: #7B2C3B;color: white;padding: 20px;font-size: 26px;}
+.categories { margin: 20px;}
+button.category {background-color: #7B2C3B;color: white;border: none;padding: 10px 18px;border-radius: 6px;margin: 6px;cursor: pointer;font-size: 16px;transition: background-color 0.3s;}
+button.category:hover {background-color: #5a1f2b;}
+.book-list {display: none;margin: 15px 0;}
+.book-list.active {display: block;animation: fadeIn 0.4s ease-in-out;}
+ @keyframes fadeIn {from {opacity: 0;}to {opacity: 1;}}
+ a.book {display: inline-block;background-color: #7B2C3B;color: white;text-decoration: none;padding: 10px 20px; border-radius: 6px;margin: 6px;font-size: 15px;transition: background-color 0.3s;}
+a.book:hover {background-color: #5a1f2b;}
+.controls {margin: 20px; }
+.controls button {background-color: #7B2C3B;color: white; border: none; border-radius: 6px;padding: 8px 14px;margin: 5px;cursor: pointer;transition: background-color 0.3s;}
+.controls button:hover {background-color: #5a1f2b;}
+iframe {width: 90%;height: 600px;border: none;border-radius: 10px;background-color: white;box-shadow: 0 4px 8px rgba(0,0,0,0.1);margin-top: 10px;transition: filter 0.4s;}
+.night {  background-color: #222; color: #ddd;}
+.night iframe {filter: invert(0.9) hue-rotate(180deg);}
+  </style>
+</head>
+<body>
+  <header>Online Reading Library</header>
+  <div class="categories">
+    <button class="category" onclick="showCategory('drama')">Drama</button>
+    <button class="category" onclick="showCategory('philosophy')">Philosophy</button>
+    <button class="category" onclick="showCategory('mystery')">Mystery</button>
+    <button class="category" onclick="showCategory('education')">Education</button>
+  </div>
+  <div id="drama" class="book-list">
+    <a href="books/DramaBl.pdf" target="pdfViewer" class="book">كل أزرق السماء</a>
+    <a href="books/DramaL.pdf" target="pdfViewer" class="book">بينما تنمو أشجار الليمون</a>
+    <a href="books/Store By The Sea.pdf" target="pdfViewer" class="book">The Convenience Store By The Sea</a>
+  </div>
+
+  <div id="philosophy" class="book-list">
+    <a href="books/Philo.pdf" target="pdfViewer" class="book">حالة الاستثناء</a>
+    <a href="books/Phli.pdf" target="pdfViewer" class="book">الفكر الجمهوري</a>
+    <a href="books/Philos.pdf" target="pdfViewer" class="book">محاورة فيدون</a>
+  </div>
+
+  <div id="mystery" class="book-list">
+    <a href="books/Mystery.pdf" target="pdfViewer" class="book">مذكرات شيرلوك هولمز</a>
+    <a href="books/Mystr.pdf" target="pdfViewer" class="book">دليل الشمعة الملتوية</a>
+    <a href="books/Myst.pdf" target="pdfViewer" class="book">الممثلون الغافلون</a>
+  </div>
+
+  <div id="education" class="book-list">
+    <a href="books/Theory.pdf" target="pdfViewer" class="book">نظرية كل شيء</a>
+    <a href="books/Math.pdf" target="pdfViewer" class="book">A Mind for Numbers</a>
+  </div>
+  <div class="controls">
+    <button onclick="zoomIn()">+</button>
+    <button onclick="zoomOut()">-</button>
+    <button onclick="toggleNight()">Dark Mode System </button>
+    <button onclick="saveBookmark()">Save</button>
+    <button onclick="loadBookmark()">Retrive</button>
+  </div>
+   <iframe name="pdfViewer" id="pdfViewer"></iframe>
+
+  <script>
+    let zoom = 600;
+    let night = false;
+
+    function showCategory(id) {
+      document.querySelectorAll('.book-list').forEach(div => div.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function zoomIn() {
+      zoom += 100;
+      document.getElementById("pdfViewer").style.height = zoom + "px";
+    }
+
+    function zoomOut() {
+      if (zoom > 400) zoom -= 100;
+      document.getElementById("pdfViewer").style.height = zoom + "px";
+    }
+
+    function toggleNight() {
+      night = !night;
+      document.body.classList.toggle("night", night);
+    }
+
+    function saveBookmark() {
+      const iframe = document.getElementById("pdfViewer");
+      if (!iframe.src) return alert("Choose Book First.");
+      localStorage.setItem("bookmark", iframe.src);
+      alert(" Done Save.");
+    }
+
+    function loadBookmark() {
+      const saved = localStorage.getItem("bookmark");
+      if (saved) {
+        document.getElementById("pdfViewer").src = saved;
+        alert("Done Book Saving.");
+      } else {
+        alert("No Book saved.");
+      }
+    }
+  </script>
+</body>
+</html>
