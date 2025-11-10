@@ -78,3 +78,8 @@ header {
 .btn-details:hover {
   background-color: #5a1f2b;
 }
+/* Header navbar links */
+header .navbar { margin-top: 8px; }
+header .navbar a { color: var(--white); text-decoration: none; margin: 0 8px; font-weight: 600; }
+header .navbar a:visited { color: var(--white); }
+header .navbar a:hover { text-decoration: underline; }

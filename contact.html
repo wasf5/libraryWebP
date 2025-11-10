@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا | Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container { max-width: 1000px; margin: 20px auto; padding: 20px; }
+    .card { background: var(--old-paper); border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    form { display: grid; gap: 15px; }
+    label { color: var(--blue-gray); font-weight: bold; }
+    input, textarea { padding: 10px; border: 2px solid var(--blue-gray); border-radius: 6px; background: #fff; font-family: inherit; }
+    textarea { min-height: 140px; resize: vertical; }
+    .btn { background: var(--rich-bordeaux); color: var(--white); border: 0; padding: 10px 18px; border-radius: 6px; cursor: pointer; }
+    .btn:hover { background:#5a1f2b; }
+    .grid { display: grid; gap: 20px; grid-template-columns: 2fr 1fr; }
+    .info p { margin: 8px 0; }
+    .badge { display:inline-block; background: var(--rich-bordeaux); color:#fff; padding: 4px 10px; border-radius: 999px; font-size: 12px; }
+    .nav { text-align:center; margin-top: 10px; }
+    .nav a { margin: 0 8px; color: var(--white); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Library Web</h1>
+    <nav class="navbar">
+      <a href="Categories.html">التصنيفات</a>
+      <a href="Searching.html">بحث</a>
+      <a href="book.html">تفاصيل كتاب</a>
+      <a href="reader.html">القارئ</a>
+      <a href="contact.html">اتصل بنا</a>
+      <a href="account.html">حسابي</a>
+      <a href="orders.html">طلباتي</a>
+      <a href="policies.html">السياسات</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <h2 style="color: var(--rich-bordeaux); margin-top:0">نموذج التواصل</h2>
+        <form>
+          <div>
+            <label for="name">الاسم الكامل</label>
+            <input id="name" type="text" placeholder="اكتب اسمك" required>
+          </div>
+          <div>
+            <label for="email">البريد الإلكتروني</label>
+            <input id="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div>
+            <label for="subject">الموضوع</label>
+            <input id="subject" type="text" placeholder="موضوع الرسالة" required>
+          </div>
+          <div>
+            <label for="message">نص الرسالة</label>
+            <textarea id="message" placeholder="اكتب رسالتك هنا" required></textarea>
+          </div>
+          <div>
+            <button class="btn" type="submit">إرسال</button>
+          </div>
+        </form>
+      </div>
+      <div class="card info">
+        <h3 style="color: var(--rich-bordeaux); margin-top:0">بيانات الدعم</h3>
+        <p><span class="badge">البريد</span> support@libraryweb.example</p>
+        <p><span class="badge">الهاتف</span> +966-555-000-000</p>
+        <p><span class="badge">المواعيد</span> يوميًا 9ص - 6م</p>
+        <hr>
+        <p>هل لديك مشكلة في الاشتراك أو الوصول للكتب؟ تواصل معنا وسيتم الرد خلال 24 ساعة.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طلباتي / اشتراكاتي | Orders</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container { max-width: 1100px; margin: 20px auto; padding: 20px; }
+    .card { background: var(--old-paper); border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .table { width: 100%; border-collapse: collapse; }
+    .table th, .table td { padding: 12px 10px; border-bottom: 1px solid rgba(0,0,0,0.1); text-align: right; }
+    .table th { color: var(--rich-bordeaux); }
+    .badge { display:inline-block; padding: 4px 10px; border-radius: 999px; color:#fff; font-size: 12px; }
+    .paid { background:#2e7d32; }
+    .pending { background:#b26a00; }
+    .free { background:#607D8B; }
+    .nav { text-align:center; margin-top: 10px; }
+    .nav a { margin: 0 8px; color: var(--white); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Library Web</h1>
+    <nav class="navbar">
+      <a href="Categories.html">التصنيفات</a>
+      <a href="Searching.html">بحث</a>
+      <a href="book.html">تفاصيل كتاب</a>
+      <a href="reader.html">القارئ</a>
+      <a href="contact.html">اتصل بنا</a>
+      <a href="account.html">حسابي</a>
+      <a href="orders.html">طلباتي</a>
+      <a href="policies.html">السياسات</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2 style="color:var(--rich-bordeaux); margin-top:0">الطلبات</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>الرقم</th>
+            <th>العنصر</th>
+            <th>التاريخ</th>
+            <th>المبلغ</th>
+            <th>الحالة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#1024</td>
+            <td>كتاب: نظرية كل شيء</td>
+            <td>2025-01-10</td>
+            <td>$6.99</td>
+            <td><span class="badge paid">مدفوع</span></td>
+          </tr>
+          <tr>
+            <td>#1025</td>
+            <td>كتاب: مذكرات شيرلوك هولمز</td>
+            <td>2025-02-02</td>
+            <td>$2.99</td>
+            <td><span class="badge pending">قيد المعالجة</span></td>
+          </tr>
+          <tr>
+            <td>#1026</td>
+            <td>كتاب مجاني: حالة الاستثناء</td>
+            <td>2025-03-12</td>
+            <td>$0.00</td>
+            <td><span class="badge free">مجاني</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <h2 style="color:var(--rich-bordeaux); margin-top:0">الاشتراكات</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>الخطة</th>
+            <th>الحالة</th>
+            <th>البداية</th>
+            <th>التجديد</th>
+            <th>التحكم</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>مجاني</td>
+            <td><span class="badge free">نشط</span></td>
+            <td>2025-01-01</td>
+            <td>لا يوجد</td>
+            <td><button class="btn" style="padding:6px 12px; border:0; border-radius:6px; background: var(--rich-bordeaux); color:#fff; cursor:pointer;">ترقية</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

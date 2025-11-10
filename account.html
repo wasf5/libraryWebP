@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة الحساب | My Account</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container { max-width: 1100px; margin: 20px auto; padding: 20px; }
+    .grid { display: grid; gap: 20px; grid-template-columns: 280px 1fr; }
+    .card { background: var(--old-paper); border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .avatar { width: 90px; height: 90px; border-radius: 50%; background: var(--fresh-page); border: 2px solid var(--blue-gray); }
+    .muted { color: var(--blue-gray); font-size: 14px; }
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li { padding: 10px 0; border-bottom: 1px dashed rgba(0,0,0,0.15); }
+    .btn { background: var(--rich-bordeaux); color: var(--white); border: 0; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+    .btn:hover { background:#5a1f2b; }
+    .flex { display:flex; align-items:center; gap:14px; }
+    .header-nav { text-align:center; margin-top: 10px; }
+    .header-nav a { margin: 0 8px; color: var(--white); text-decoration: none; }
+    .settings form { display:grid; gap: 12px; }
+    input, select { padding: 10px; border: 2px solid var(--blue-gray); border-radius: 6px; background: #fff; font-family: inherit; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Library Web</h1>
+    <nav class="navbar">
+      <a href="Categories.html">التصنيفات</a>
+      <a href="Searching.html">بحث</a>
+      <a href="book.html">تفاصيل كتاب</a>
+      <a href="reader.html">القارئ</a>
+      <a href="contact.html">اتصل بنا</a>
+      <a href="account.html">حسابي</a>
+      <a href="orders.html">طلباتي</a>
+      <a href="policies.html">السياسات</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+      <aside class="card">
+        <div class="flex">
+          <div class="avatar"></div>
+          <div>
+            <h3 style="margin:0;color:var(--rich-bordeaux)">اسم المستخدم</h3>
+            <p class="muted">user@example.com</p>
+          </div>
+        </div>
+        <hr>
+        <ul class="list">
+          <li><a href="#info">معلومات الحساب</a></li>
+          <li><a href="#security">الأمان</a></li>
+          <li><a href="#subscription">الاشتراك</a></li>
+          <li><a href="orders.html">الطلبات والاشتراكات</a></li>
+        </ul>
+      </aside>
+
+      <main class="card">
+        <section id="info">
+          <h2 style="color:var(--rich-bordeaux); margin-top:0">معلومات الحساب</h2>
+          <div class="settings">
+            <form>
+              <input type="text" placeholder="الاسم الكامل">
+              <input type="email" placeholder="البريد الإلكتروني">
+              <select>
+                <option>اللغة: العربية</option>
+                <option>اللغة: English</option>
+              </select>
+              <button class="btn" type="button">حفظ</button>
+            </form>
+          </div>
+        </section>
+        <hr>
+        <section id="security">
+          <h2 style="color:var(--rich-bordeaux)">الأمان</h2>
+          <div class="settings">
+            <form>
+              <input type="password" placeholder="كلمة المرور الحالية">
+              <input type="password" placeholder="كلمة مرور جديدة">
+              <input type="password" placeholder="تأكيد كلمة المرور الجديدة">
+              <button class="btn" type="button">تغيير كلمة المرور</button>
+            </form>
+          </div>
+        </section>
+        <hr>
+        <section id="subscription">
+          <h2 style="color:var(--rich-bordeaux)">إدارة الاشتراك</h2>
+          <p class="muted">خطة حالية: مجاني</p>
+          <button class="btn" type="button">ترقية إلى اشتراك مدفوع</button>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
