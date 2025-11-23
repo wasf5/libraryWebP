@@ -1,0 +1,198 @@
+/* Basic body reset */
+body {
+    margin: 70px 0 0 0; /* To avoid content being hidden behind the fixed top bar */
+    font-family: sans-serif;
+}
+
+/* Style for the top bar container */
+.top-bar {
+    /* Positioning */
+    position: fixed; /* This makes the bar stick to the top */
+    top: 0;          /* Position it at the very top */
+    left: 0;         /* Position it at the very left */
+    width: 97%;     /* Make it span the full width of the screen */
+    
+    /* Layout */
+    display: flex;                 /* Use Flexbox for easy alignment */
+    justify-content: space-between; /* Puts space between logo and nav links */
+    align-items: center;           /* Vertically centers the items */
+
+    /* Appearance */
+    background-color: white; 
+    padding: 5px 20px;        /* Add some padding (top/bottom and left/right) */
+    color: #7B2C3B;              /* Text color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a subtle shadow below the bar */
+}
+
+/* Style for the logo */
+.logo {
+    
+    font-size: 2em;  /* Make the logo text bigger */
+    font-weight: bold; /* Bold font for emphasis */
+    margin-left: 20px; /* Small left margin */
+}
+.navigation {
+    display: flex; /* Use Flexbox for easy alignment */
+    align-items: center; /*to center items vertically */
+    width: 100%; /* Take full width of the top bar */
+}
+
+.navigation .nav-right { /* to push the right menu to the far right */
+    margin-right: 5px; /* Small right margin */ 
+    margin-left: auto; /* Pushes this section to the far right */
+}
+
+/* to add margin between logo and navigation */
+.navigation .nav-center {
+
+    margin-left: 30px; /* Small space from the logo */
+
+
+}
+/* Remove bullets and default padding from the list */
+.navigation ul { 
+    
+    margin: 0;  /* Removes default margin */
+    padding: 0; 
+    list-style: none; /* Removes the bullet points */
+    display: flex;    /* Makes list items align horizontally */
+}
+
+/* Add space between the navigation links */
+.navigation li {
+    margin-left: 0 15px; 
+
+}
+
+/* Style for the links */
+.navigation a { 
+    
+    color: #7B2C3B;
+    text-decoration: none; /* Removes the underline from links */
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+/* Change link color on hover for a nice effect */
+.navigation a:hover {
+    color: #3e0505; /* A teal color */
+}
+/* Banner */
+.bg-image {
+        position: absolute; /* Allows us to position it within the banner */
+        top: 60px; /* Top edge */
+        right: 0; 
+        width: 100%; /* Full width */
+        height: 60%;
+        
+        /* Put your image here */
+        background-image: url('img/banner.jpg');
+        background-size: cover; /* Ensures the image covers the entire div */
+        opacity: 0.7; /* Slightly transparent */
+        mask-image: linear-gradient(to right, transparent 0%, black 50%); /* Fades out to the right */
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%); /* For Safari */
+        
+        z-index: 0; /* Puts it behind */
+    }
+.banner-text {
+        position: relative; /* Allows us to use z-index */
+        z-index: 1; /* Puts it ON TOP of the image */
+        
+        /* Positioning the text */
+        padding-top: 150px;/* Center vertically */
+        padding-left: 50px; /* Some left padding */
+        width: 40%; /* Keep text on the left side */
+        color: rgb(67, 47, 47);
+}
+.banner-text h2 {
+  color: #3d2b1f; /* Dark brown color for the heading */
+}
+
+.banner-text button {
+  background-color: #520a0a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer; /* Pointer cursor on hover */
+}
+.banner button a {
+  color: white;
+  text-decoration: none; /* Removes underline from link */
+}
+/* Books */
+.popular {
+    
+  margin: 80px 50px; /* Margin around the section */
+}
+
+.popular-header { /* Flexbox for header layout */
+
+    display: flex; /* Use Flexbox for easy alignment */
+  justify-content: space-between; /* Space between title and button */
+  align-items: center; /* Vertically center items */
+}
+
+
+.book-grid { /* Grid layout for books */
+  display: grid; /* Use grid layout for books */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive columns */
+  gap: 10px; /* Space between grid items */
+  margin-top: 20px;
+  height: 30%;
+}
+
+.book-card { /* Individual book card styling */
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center; 
+  transition: 0.3s;
+
+}
+
+.book-card:hover { /* Hover effect */
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.book-card img { /* Book cover image styling */
+  width: 100%;
+  border-radius: 10px;
+}
+.book-card h3 { /* Book title styling */
+  margin: 10px 0 5px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.footer { /* Footer styling */
+  background-color: #520a0a;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 100px;
+}
+.banner2 {
+  position: relative; /* To position child elements absolutely */
+  height: 250px; /* Set a specific height */
+  overflow: hidden; /* Hide overflow to maintain design */
+}
+
+.bg-image2 {
+  position: absolute; /* Allows us to position it within the banner */
+  left: 0; /* Left edge */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-image: url('img/banner2.jpg'); /* Put your image here */
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center;
+  opacity: 0.8;
+}
+
+.banner-text2 {
+  position: relative; /* Allows us to use z-index */
+  z-index: 1; /* Puts it ON TOP of the image */
+  color: rgb(240, 237, 237);
+  text-align: center;
+  padding: 100px 20px; /* Adjust padding as needed */
+} 

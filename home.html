@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Home Page</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        .book-grid {
+            background-color: #f9f4ef;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax values as needed */
+            gap: auto;
+            justify-items: center; 
+            align-items: start; /* Align items to the top */
+            padding: 20px;
+            
+        }
+       .book-card {
+        
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            width: 200px;
+            text-align: center; transition: 0.3s;
+            
+        }
+
+        .book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+        .book-card img {
+            background-color: antiquewhite;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .book-card h4 {
+            margin: 10px 0 5px 0;
+        }
+        .book-card button {
+            background-color: #520a0a;
+        }
+        .book-card button a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo">
+            本
+        </div>
+
+        <nav class="navigation">
+        <ul class="nav-center">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="Categories.html">Shop</a></li>
+        <li><a href="Searching.html">Search</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="policies.html">Policies</a></li>
+        <li><a href="account.html">Account</a></li>
+    </ul>
+
+    <ul class="nav-right">
+        
+        <li><a href="orders.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <!-- Banner -->
+     <div class="banner">
+        <div class="bg-image"></div> <!-- Background image container (styled in CSS) -->
+        <div class="banner-text"> 
+            <!-- Main heading shown on the banner -->
+            <h2>Build your library</h2>
+            <!-- Short subheading or tagline -->
+            <p>Enjoy our new collection of books!</p>
+            <button><a href="Categories.html">View all</a></button>
+        </div>
+    </div>
+  
+  <section class="popular"> 
+    <div class="popular-header">
+        <h2> Popular Books</h2> 
+        <a href="Categories.html" style="color: #520a0a; text-decoration: none;">View all</a>
+    </div>
+    <div class ="book-grid">
+        <div class="book-card">
+            <img src="img/Myst01.png" alt="Book 1">
+            <h4>مذكرات شيرلوك هولمز</h4>
+            <span>$2.99</span><br><br>
+            <button><a href="book.html">View Details</a></button>
+        </div>
+        <div class="book-card">
+                <img src="img/Myst02.png" alt="Book 2">
+                <h4>دليل الشمعة الملتوية</h4>
+                <span>مجاني</span><br><br>
+                <button><a href="book.html">View Details</a></button>
+        </div>
+        <div class="book-card">
+                    <img src="img/phila02.png" alt="Book 3">
+                    <h4>الفكر الجمهوري</h4>
+                    <span>$5.99</span><br><br>
+                    <button><a href="book.html">View Details</a></button>
+                </div>
+                <div class="book-card">
+                    <img src="img/DramaL.png" alt="Book 4">
+                    <h4>بينما تنمو أشجار الليمون</h4>
+                    <span>$4.99</span><br><br>
+                    <button><a href="book.html">View Details</a></button>
+                </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 本 Library. All rights reserved.</p>
+    </footer>
+</body>
+</html>

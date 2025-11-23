@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style2.css">
+<head>
+  
+    <link rel="stylesheet" href="homepagestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f2ea;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        h1 {
+            margin: 100px 0;
+            text-align: center;
+            color: #520a0a;
+        }
+        input{
+           
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Center the submit button inside the form */
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 24px;
+            width: auto;
+            background-color: #520a0a;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(225, 215, 204);">
+    <header class="top-bar">
+        <div class="logo">
+            本
+        </div>
+
+        <nav class="navigation">
+    <ul class="nav-center">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="Categories.html">Shop</a></li>
+        <li><a href="Searching.html">Search</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+    </ul>
+
+    <ul class="nav-right">
+        
+        <li><a href="Cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+    </header>
+  <h1>Login</h1>
+ 
+  <form action="/login" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <input type="submit" value="Login" >
+  </form>
+  <footer class="footer">
+    <p>&copy; 2025 本 Library. All rights reserved.</p>
+    </footer>
+</body>
+</html>
