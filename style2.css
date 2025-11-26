@@ -87,6 +87,7 @@ body {
         
         /* Put your image here */
         background-image: url('img/banner.jpg');
+        background-attachment: fixed; /* Creates the parallax effect */
         background-size: cover; /* Ensures the image covers the entire div */
         opacity: 0.7; /* Slightly transparent */
         mask-image: linear-gradient(to right, transparent 0%, black 50%); /* Fades out to the right */
@@ -184,6 +185,7 @@ body {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   background-image: url('img/banner2.jpg'); /* Put your image here */
+  background-attachment: fixed; /* Creates the parallax effect */
   background-size: cover; /* Ensures the image covers the entire div */
   background-position: center;
   opacity: 0.8;
