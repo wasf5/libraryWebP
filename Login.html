@@ -3,15 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2.css"> <!-- Link to external CSS file -->
 <head>
-  
-    <link rel="stylesheet" href="homepagestyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
-        form {
+        form { /* Style the form container */
             max-width: 400px;
-            margin: 50px auto;
+            margin: 30px auto;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 8px;
@@ -23,7 +21,7 @@
             font-weight: bold;
         }
         h1 {
-            margin: 100px 0;
+            margin:50px 0;
             text-align: center;
             color: #520a0a;
         }
@@ -35,27 +33,25 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
         /* Center the submit button inside the form */
-        input[type="submit"] {
+        button {
             display: block;
             margin: 0 auto;
             padding: 10px 24px;
             width: auto;
             background-color: #520a0a;
             color: #fff;
-            border: none;
+            border: none; 
             border-radius: 4px;
             cursor: pointer;
         }
     </style>
 </head>
-<body style="background-color: rgb(225, 215, 204);">
-    <header class="top-bar">
-        <div class="logo">
+<body style="background-color: rgb(225, 215, 204);"> <!-- inline css - Light background color -->
+    <header class="top-bar"> <!-- Top navigation bar -->
+        <div class="logo"> 
             本
         </div>
-
         <nav class="navigation">
     <ul class="nav-center">
         <li><a href="home.html">Home</a></li>
@@ -66,25 +62,46 @@
         <li><a href="policies.html">Policies</a></li>
         <li><a href="account.html">Account</a></li>
     </ul>
-
     <ul class="nav-right">
         
         <li><a href="orders.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="login.html">Sign Up</a></li>
     </ul>
 </nav>
     </header>
-  <h1>Login</h1>
- 
-  <form action="/login" method="post">
+  <h1>Sign Up</h1>
+  <form action="login" method="post">
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+    <input type="text" placeholder="Username" id="username">
+    <label for="email">Email:</label>
+    <input type="text" placeholder="Email" id="email">
     <br>
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+    <input type="password" placeholder="Password" id="password">
+    <input type="text" placeholder="Confirm Password" id="confirm-password">
     <br>
-    <input type="submit" value="Login" >
-  </form>
+    <button id="login-btn">Sign Up</button>
+</form>
+<script>
+    /* --- JAVASCRIPT LOGIC --- */
+    const button = document.getElementById('login-btn');
+    // 1. ADD 'event' here to the function
+    button.addEventListener('click', function(event) {  
+        // 2. PREVENT the form from submitting 
+        event.preventDefault(); 
+        // This stops the form from refreshing the page!   
+        // Check if fields are empty
+        const user = document.getElementById('username').value;
+        const pass = document.getElementById('password').value;
+        const email = document.getElementById('email').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        if(user === "" || pass === "" || email === "" || confirmPassword === "") { // 3. VALIDATION
+            alert("Please fill in all fields!"); // Alert if any field is empty
+        } else {
+            window.location.href = "home.html"; // Redirect to home page on successful login
+        }
+    });
+</script>
   <footer class="footer">
     <p>&copy; 2025 本 Library. All rights reserved.</p>
     </footer>
