@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Home Page</title>
     <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Font Awesome for icons -->
     
     <style>
-        .book-grid {
+        .book-grid { /* Container for the book cards */
             background-color: #f9f4ef;
             border-radius: 8px;
             display: grid;
@@ -22,22 +22,20 @@
        .book-card {
         
             border: 1px solid #ccc;
-            border-radius: 8px;
+            border-radius: 8px; /* Rounded corners */
             padding: 15px;
             width: 200px;
-            text-align: center; transition: 0.3s;
-            
+            text-align: center; transition: 0.3s; /* Smooth hover effect */     
         }
-
         .book-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow on hover */
 }
         .book-card img {
-            background-color: antiquewhite;
+            background-color: antiquewhite; /* Fallback background color */
             width: 100%;
             height: 250px;
-            object-fit: cover;
+            object-fit: cover; /* Ensure the image covers the area */
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -48,14 +46,14 @@
             background-color: #520a0a;
         }
         .book-card button a {
-            text-decoration: none;
+            text-decoration: none; /* Remove underline from links */
             color: #ffffff;
         }
 
     </style>
 </head>
 <body>
-    <header class="top-bar">
+    <header class="top-bar"> <!-- Top navigation bar -->
         <div class="logo">
             本
         </div>
@@ -90,14 +88,14 @@
             <button><a href="Categories.html">View all</a></button>
         </div>
     </div>
-  
-  <section class="popular"> 
-    <div class="popular-header">
+  <!-- Popular Books Section -->
+  <section class="popular"> <!-- Popular books section -->
+    <div class="popular-header"> <!-- Header for the popular books section -->
         <h2> Popular Books</h2> 
-        <a href="Categories.html" style="color: #520a0a; text-decoration: none;">View all</a>
+        <a href="Categories.html" style="color: #520a0a; text-decoration: none;">View all</a> <!-- Link to view all books -->
     </div>
-    <div class ="book-grid">
-        <div class="book-card">
+    <div class ="book-grid"> <!-- Grid container for book cards -->
+        <div class="book-card"> <!-- Individual book card -->
             <img src="img/Myst01.png" alt="Book 1">
             <h4>مذكرات شيرلوك هولمز</h4>
             <span>$2.99</span><br><br>
@@ -123,7 +121,7 @@
                 </div>
     </div>
   </section>
-
+<!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 本 Library. All rights reserved.</p>
     </footer>
