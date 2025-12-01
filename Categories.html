@@ -33,6 +33,12 @@
     </nav>
   </header>
 
+  <!--  مشغل الصوت الخلفي-->
+  <audio id="bg-sound" loop>
+    <source src="BackGround.m4a" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <section class="filter-bar">
     <h2>Filter Books</h2>
     <div class="filters">
@@ -103,11 +109,18 @@
     }
 
     window.onload = () => displayBooks(books);
+
+    //  تشغيل الصوت عند أول ضغطة بالفأرة
+    document.body.addEventListener("click", () => {
+      const sound = document.getElementById("bg-sound");
+      if (sound.paused) {
+        sound.play();
+      }
+    }, { once: true }); // يشغل الصوت مرة وحدة فقط عند أول ضغطة
   </script>
-</body>
-</html>
+
   <footer class="footer">
     <p>&copy; 2025 本 Library. All rights reserved.</p>
-    </footer>
+  </footer>
 </body>
 </html>
