@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Books Details</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style2.css">
+    <title>Books Details</title>
+    <link rel="stylesheet" href="style.css">
   <style>
     body {font-family: Cambria, Georgia, serif;background-color: #E8F5E9;color: #333;margin: 0;padding: 0;}
     header {background-color: #7B2C3B;color: white;padding: 15px;text-align: center;}
@@ -27,18 +25,20 @@
     <h1 class="logo">Books Details</h1>
     <nav class="navbar">
       <a href="home.html">Home</a>
-      <a href="Searching.html">Search</a>
+      <a href="Login.html">Sign Up</a>
       <a href="Categories.html">Categories</a>
+      <a href="Searching.html">Search</a>
+      <a href="orders.html">Cart</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="policies.html">Policies</a>
+      <a href="account.html">Account</a>
     </nav>
   </header>
-
-  <!-- Books will be injected here from XML -->
   <div id="books-root"></div>
-
-  <!-- Embedded XML data (11 books) -->
   <script type="text/xml" id="xmlData">
     <library>
-      <book>
+     <book>
         <image>img/Edu01.png</image>
         <title>نظرية كل شيء</title>
         <author>Paul Davies and Julian Brown</author>
@@ -125,6 +125,9 @@
     const books = xmlDoc.getElementsByTagName("book");
     let htmlContent = "";
 
+    // قائمة الكتب المجانية (حسب العناوين)
+    const freeBooks = ["حالة الاستثناء", "محاورة فيدون", "دليل الشمعة الملتوية", "A Mind For Numbers", "كل أزرق السماء"];
+
     for (let i = 0; i < books.length; i++) {
       const image = books[i].getElementsByTagName("image")[0].textContent;
       const title = books[i].getElementsByTagName("title")[0].textContent;
@@ -132,32 +135,32 @@
       const category = books[i].getElementsByTagName("category")[0].textContent;
       const description = books[i].getElementsByTagName("description")[0].textContent;
 
+      // تحقق إذا الكتاب مجاني
+      const isFree = freeBooks.includes(title);
+
       htmlContent += `
         <div class="container">
           <div class="book-info">
             <img src="${image}" alt="${title}">
             <div class="details">
               <h2>${title}</h2>
-              <p><strong>المؤلف:</strong> ${author}</p>
-              <p><strong>التصنيف:</strong> ${category}</p>
-              <p><strong>الوصف:</strong> ${description}</p>
+              <p><strong>Author:</strong> ${author}</p>
+              <p><strong>Category:</strong> ${category}</p>
+              <p><strong>Description:</strong> ${description}</p>
               <div class="buttons">
-                <a href="reader.html">اقرأ الآن</a>
-                <button onclick="addToLibrary('${title}')">أضف إلى مكتبتي</button>
+                ${isFree ? `<a href="reader.html?book=${encodeURIComponent(title)}">Read Now</a>` : ""}
+                <button onclick="addToLibrary('${title}')">Add to the library</button>
               </div>
             </div>
           </div>
         </div>
-      `;}
-
+      `;
+    }
     document.getElementById("books-root").innerHTML = htmlContent;
 
     function addToLibrary(bookName) {
-      alert("📖 تمت إضافة الكتاب: " + bookName + " إلى مكتبتك!");
+      alert("The Book Is Added " + bookName + " To Your Library");
     }
   </script>
-   <footer class="footer">
-    <p>&copy; 2025 本 Library. All rights reserved.</p>
-    </footer>
 </body>
 </html>
